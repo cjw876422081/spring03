@@ -1,0 +1,19 @@
+package com.niitcoder;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("Beans.xml");
+        UserDao userDao = (UserDao) applicationContext.getBean("userdao") ;
+        userDao.addUser();
+    }
+}
